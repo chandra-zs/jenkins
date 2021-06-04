@@ -2,7 +2,7 @@ folder('CI-Pipelines') {
     displayName('CI Pipelines')
     description('CI Pipelines')
 }
-def component = ["frontend","users","login","todo"];
+def component = ["frontend","users","login","todoshop"];
 def count=(component.size()-1)
 for (i in 0..count) {
     def j=component[i]
