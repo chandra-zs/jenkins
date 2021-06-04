@@ -12,12 +12,13 @@ for (i in 0..count) {
                 'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git') {
                     'userRemoteConfigs' {
                         'hudson.plugins.git.UserRemoteConfig' {
-                            'url'('https://github.com/chandra-zs/'+j+'.git')
+                            'url'('https://github.com/srikavyapendiala/'+j+'.git')
+                            'refspec'('\'+refs/tags/*\':\'refs/remotes/origin/tags/*\'')
                         }
                     }
                     'branches' {
                         'hudson.plugins.git.BranchSpec' {
-                            'name'('*/main')
+                            'name'('*/tags/*')
                         }
                     }
                 }
