@@ -2,7 +2,7 @@ folder('CI-Pipelines') {
     displayName('CI Pipelines')
     description('CI Pipelines')
 }
-def component = ["frontnend","users","login","Todo"];
+def component = ["frontend","users","login","todo"];
 def count=(component.size()-1)
 for (i in 0..count) {
     def j=component[i]
@@ -13,12 +13,11 @@ for (i in 0..count) {
                     'userRemoteConfigs' {
                         'hudson.plugins.git.UserRemoteConfig' {
                             'url'('https://github.com/chandra-zs/'+j+'.git')
-                            'refspec'('\'+refs/tags/*\':\'refs/remotes/origin/tags/*\'')
                         }
                     }
                     'branches' {
                         'hudson.plugins.git.BranchSpec' {
-                            'name'('*/tags/*')
+                            'name'('*/main')
                         }
                     }
                 }
