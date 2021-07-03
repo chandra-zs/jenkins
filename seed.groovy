@@ -24,7 +24,7 @@ for (i in 0..count) {
                         }
                     }
                 }
-                'scriptPath'('Docker')
+                'scriptPath'('Jenkinsfile-Docker')
                 'lightweight'(true)
             }
         }
