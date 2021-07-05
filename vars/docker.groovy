@@ -11,9 +11,6 @@ def call(Map params = [:]) {
                 label "${args.SLAVE_LABEL}"
             }
         }
-        options {
-          skipDefaultCheckout true
-        }
 
         triggers {
             pollSCM('* * * * 1-5')
