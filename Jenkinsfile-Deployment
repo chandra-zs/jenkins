@@ -33,7 +33,7 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/chandra-zs/ansible.git'
                 sh '''
-                   ansible-playbook -i inv  -e COMPONENT=${COMPONENT} -e ENV=${ENV} -e APP_VERSION=${VERSION} -u ubuntu -e ansible_password=${UBUNTU_SSH_PASSWORD} todo.yml
+                   ansible-playbook -i inv  -e COMPONENT=${COMPONENT} -e ENV=${ENV} -e APP_VERSION=${VERSION} -u ubuntu -e ansible_password=DevOps321 todo.yml
                 '''
             }
         }
