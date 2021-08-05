@@ -59,26 +59,7 @@ pipelineJob("Deployment Pipeline") {
     }
 }
 
-pipelineJob("Docker Pipeline") {
-    configure { flowdefinition ->
-        flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps') {
-            'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git') {
-                'userRemoteConfigs' {
-                    'hudson.plugins.git.UserRemoteConfig' {
-                        'url'('https://github.com/chandra-zs/jenkins.git')
-                    }
-                }
-                'branches' {
-                    'hudson.plugins.git.BranchSpec' {
-                        'name'('*/tags/*')
-                    }
-                }
-            }
-            'scriptPath'('Jenkinsfile-Docker')
-            'lightweight'(true)
-        }
-    }
-}
+
 folder('CI-Pipelines') {
     displayName('CI Pipelines-Docker')
     description('CI Pipelines-Docker')
